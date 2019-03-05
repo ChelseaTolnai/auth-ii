@@ -5,7 +5,7 @@ const Users = require('../../data/models/userModels');
 const routerMiddleware = require('../middleware/routerMiddleware');
 const loginToken = require('./loginToken');
 
-router.post('/',routerMiddleware.checkUser, async (req, res) => {
+router.post('/',routerMiddleware.checkUser, async (req, res, next) => {
     let { username, password } = req.body;
 
     try {
