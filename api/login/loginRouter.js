@@ -21,7 +21,7 @@ router.post('/',routerMiddleware.checkUser, async (req, res) => {
                 message: `Welcome ${user.username}.`
             });
         } else {
-            next({code: 401, action: 'logging in', subject: 'user. Invalid Credentials'})
+            next({code: 401, action: 'logging in', subject: 'user. Invalid Credentials. You shall not pass'})
         }
     } catch (error) {
         next({code: 500, action: 'logging in', subject: 'user'})

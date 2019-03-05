@@ -7,6 +7,9 @@ module.exports = {
         return users[0];
     },
     get: function(filter) {
-        return db('users').where(filter);
+        if(filter) {
+            return db('users').where(filter);
+        }
+        return db('users').select('*');
     }
 };

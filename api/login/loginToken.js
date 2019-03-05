@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken'); 
 
-const secrets = process.env.JWT_SECRET
+const secrets = process.env.JWT_SECRET;
 
 function loginToken(user) {
     const payload = {
         subject: user.id, 
         username: user.username,
+        department: user.department,
     }
 
     const options = {
