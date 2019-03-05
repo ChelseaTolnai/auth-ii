@@ -8,18 +8,23 @@ import Users from './users/Users';
 
 class App extends Component {
 
+  handleSignout = () => {
+    localStorage.removeItem('jwt');
+    this.props.history.push('/signin');
+  };
+
   render() {
     return (
       <>
         <header>
           <nav>
-            <NavLink to="/signup">SignUp</NavLink>
+            <NavLink to="/signup">Sign Up</NavLink>
             &nbsp;|&nbsp;
-            <NavLink to="/signin">SignIn</NavLink>
+            <NavLink to="/signin">Sign In</NavLink>
             &nbsp;|&nbsp;
             <NavLink to="/users">Users</NavLink>
             &nbsp;|&nbsp;
-            <button>Signout</button>
+            <button onClick={this.handleSignout}>Signout</button>
           </nav>
         </header>
         <main>

@@ -32,9 +32,9 @@ class Users extends React.Component {
     render() {
         return (
             <>
-                <h2>Users</h2>
+                {this.state.errorMessage ? <p>{this.state.errorMessage}</p> :
 
-                <table>
+                <table>                    
                     <thead>
                         <tr>
                             <th>Username</th>
@@ -52,12 +52,7 @@ class Users extends React.Component {
                     </tbody>
 
                 </table>
-
-                {this.state.errorMessage 
-                ? <p>{this.state.errorMessage}</p>
-                : null
                 }
-
             </>
         )
     }
